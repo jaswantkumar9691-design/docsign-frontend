@@ -12,10 +12,8 @@ import SignaturePad from "./SignaturePad";
 // local .mjs file, which can silently fail to load in some setups.
 
 
-pdfjs.GlobalWorkerOptions.workerSrc = new URL(
-  "pdfjs-dist/build/pdf.worker.min.mjs",
-  import.meta.url
-).toString();
+pdfjs.GlobalWorkerOptions.workerSrc =
+  `https://unpkg.com/pdfjs-dist@${pdfjs.version}/build/pdf.worker.min.mjs`;
 
 const DEFAULT_BOX = { width: 0.24, height: 0.055 };
 
