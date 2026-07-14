@@ -1,0 +1,39 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url('https://fonts.googleapis.com/css2?family=Source+Serif+4:wght@500;600;700&family=Great+Vibes&family=Inter:wght@400;500;600;700&display=swap');
+
+:root {
+  color-scheme: light;
+}
+
+body {
+  @apply bg-parchment text-notary-900 font-body antialiased;
+}
+
+/* A subtle "official document" card treatment used throughout. */
+.paper {
+  @apply bg-white border border-notary-200 rounded-lg shadow-paper;
+}
+
+.seal-badge {
+  @apply inline-flex items-center gap-1.5 text-[11px] font-medium uppercase tracking-wide text-seal-600;
+}
+
+.signature-ink {
+  font-family: theme('fontFamily.signature');
+  color: theme('colors.notary.900');
+}
+
+::selection {
+  background: theme('colors.seal.400');
+  color: white;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: 0.001ms !important;
+    transition-duration: 0.001ms !important;
+  }
+}
